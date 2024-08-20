@@ -25,11 +25,6 @@ class GamesController < ApplicationController
     @game.logic(flash)
   end
 
-  def update
-
-  end
-
-
   private
 
   def game_params
