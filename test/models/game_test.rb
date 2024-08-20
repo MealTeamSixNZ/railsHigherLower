@@ -67,7 +67,7 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test "back button returns to index from new game" do
-
+    
   end
 
   test "create button creates game" do
