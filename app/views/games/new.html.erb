@@ -1,0 +1,18 @@
+<div align="center">
+  <h1>New Game</h1>
+
+  <%= form_with model: @game do |form| %>
+    <div>
+      <%= form.label :player_name %><br>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+  <% @game.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+</div>

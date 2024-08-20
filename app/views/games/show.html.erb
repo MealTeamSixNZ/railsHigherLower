@@ -1,0 +1,40 @@
+<div align="center">
+  <% @game.number %>
+  <h1><%= @game.name %></h1>
+  <p><%= link_to "Home", games_path %></p>
+
+  <% if flash[:notice] %>
+    <h1 class="flash"><%= flash[:notice] %></h1>
+  <% end %>
+
+  <%= form_with model: @guess do |form| %>
+    <div>
+      <%= form.hidden_field(:game_id, value: @game.id) %>
+      <%= form.label :Take_a_guess! %><br>
+      <%= form.text_field(:guess) %>
+    </div>
+
+    <div>
+      <%= form.submit "Submit", :disabled => @game.number == @game.guesses.last&.guess %>
+    </div>
+  <% end %>
+
+  <% @guess.errors.full_messages_for(:guess).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <br>
+  <br>
+  <% if @game.guesses.any? %>
+    <table>
+      <tr>
+        Guesses: <% @game.guesses.each do |guess| %>
+          <td>
+            <%= guess.guess %>
+          </td>
+        <% end %>
+      </tr>
+    </table>
+  <% end %>
+
+</div>
