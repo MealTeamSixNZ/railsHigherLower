@@ -66,8 +66,8 @@ class GameTest < ActiveSupport::TestCase
     assert_not game.save
   end
 
-  test "back button returns to index from new game" do
-    
+  test "home link returns to index from new game" do
+    assert 
   end
 
   test "create button creates game" do

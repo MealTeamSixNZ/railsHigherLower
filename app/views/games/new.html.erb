@@ -4,7 +4,7 @@
   <%= form_with model: @game do |form| %>
     <div>
       <%= form.label :player_name %><br>
-      <%= form.text_field :name, autofocus: true %>
+      <%= form.text_field :name, autofocus: true, autocomplete: 'off' %>
     </div>
 
     <div>

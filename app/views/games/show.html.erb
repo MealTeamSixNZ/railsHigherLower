@@ -21,7 +21,7 @@
   <%= form_with model: @guess do |form| %>
     <div>
       <%= form.hidden_field :game_id, value: @game.id %>
-      <%= form.text_field :guess, autofocus: true %>
+      <%= form.text_field :guess, autofocus: true, autocomplete: 'off' %>
     </div>
 
     <div>
